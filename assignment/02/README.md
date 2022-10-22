@@ -5,3 +5,5 @@ Create a new string by taking the last 3 letters of an existing string and addin
 Bear in mind that the existing string should be more than 3 characters
 
 Here is a visual of what is expected:
+
+![Ex 02](https://raw.githubusercontent.com/QualityWorksCG/javascript-and-git-automation-bootcamp/main/media/ex-02.png)
