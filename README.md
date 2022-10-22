@@ -1,4 +1,5 @@
 # JavaScript & Git Assignment
+# https://github.com/QualityWorksCG/javascript-and-git-automation-bootcamp
 
 The "assignment" folder is where you will find all exercise that will have a similar makeup to what you did during the session. 
 
