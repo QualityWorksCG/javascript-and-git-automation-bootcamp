@@ -3,8 +3,11 @@ describe('05', () => {
 
 
         const sum = (array) => {
-            // Your code here
-
+            let total = 0;
+            for (let x of array) {
+                total += x;
+            }
+            return total;
         }
 
         // Test cases
