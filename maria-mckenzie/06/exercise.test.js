@@ -7,24 +7,33 @@ describe('06', () => {
             subject: "Maths",
             wasSubmitted: true,
             markPaper: () => {
-                // add a promise here that resolves after 2 seconds
-                // and print "Maths paper marked"
+                return new Promise ((resolve, reject) => {
+                    setTimeout (() => {
+                        resolve("Maths paper marked");
+                    }, 2000);
+                });
             }
         },
         {
             subject: "Geology",
             wasSubmitted: true,
             markPaper: () => {
-                // add a promise here that resolves after 2 seconds
-                // and print "Geology paper marked"
+                return new Promise ((resolve, reject) => {
+                    setTimeout (() => {
+                        resolve("Geology paper marked");
+                    }, 2000);
+                });
             }
         },
         {
             subject: "Social Studies",
             wasSubmitted: false,
             markPaper: () => {
-                // add a promise here that resolves after 2 seconds
-                // and print "Social Studies paper marked"
+                return new Promise ((resolve, reject) => {
+                    setTimeout (() => {
+                        resolve("Social Studies paper marked");
+                    }, 2000);
+                });
             }
         },
     ]
@@ -32,8 +41,19 @@ describe('06', () => {
     it('Check if a paper was submitted, and if yes, wait for it to be marked', async () => {
         const spyOnLog = vi.spyOn(console, 'log');
 
-        // Your code here
 
+        for (let x of listOfPapers) {
+            if (x.wasSubmitted == true) {
+                return x.markPaper
+            }
+            else {
+                return new Promise ((resolve, reject) => {
+                    setTimeout (() => {
+                        reject(`${x.subject} paper not marked`);
+                    }, 2000);
+                });
+            }
+        }
 
         expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");
         expect(spyOnLog).toHaveBeenCalledWith("Geology paper marked");
