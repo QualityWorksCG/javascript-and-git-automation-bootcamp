@@ -8,6 +8,15 @@ describe('02', () => {
 
         function lastThree(str) {
             // Your code here
+            if (str.length < 3){
+                return false
+            }else{
+                let wordToArray = str.split('');
+                const lastThree = wordToArray.slice(-3)
+                const addWordsArray = [...lastThree, ...wordToArray, ...lastThree]
+                const finalWord = addWordsArray.join('')
+                return finalWord
+            }
 
         }
 
@@ -15,5 +24,6 @@ describe('02', () => {
         expect(lastThree('hello')).toBe('llohellollo');
         expect(lastThree('wor')).toBe('worworwor');
         expect(lastThree('qw')).toBe(false);
+        expect(lastThree('gre')).toBe('gregregre');
     });
 });

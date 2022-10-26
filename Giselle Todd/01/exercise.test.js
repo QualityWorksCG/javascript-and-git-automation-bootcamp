@@ -5,9 +5,13 @@ describe('Exercise 01', () => {
          */
 
         function multipleOf5Or9(positiveNumber) {
-            // Your code here
-
-        }
+            if (positiveNumber % 5 == 0 || positiveNumber % 9 == 0 ){
+                return true
+            }else{
+                return false
+            
+        };
+    }
 
         // Test cases
         expect(multipleOf5Or9(10)).toBe(true);
