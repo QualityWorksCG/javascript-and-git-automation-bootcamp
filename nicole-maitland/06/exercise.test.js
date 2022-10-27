@@ -40,6 +40,8 @@ describe('06', () => {
         },
     ]
 
+
+
     it('Check if a paper was submitted, and if yes, wait for it to be marked', async () => {
         const spyOnLog = vi.spyOn(console, 'log');
 
