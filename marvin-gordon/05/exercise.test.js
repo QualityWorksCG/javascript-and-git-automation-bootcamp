@@ -2,9 +2,12 @@ describe('05', () => {
     it('Take an array of any length and add all elements to return a sum', () => {
 
 
-        const sum = (array) => {
-            // Your code here
+        const sum = (arrayToSum) => {
 
+            let sum = arrayToSum.reduce((previousValue, currentValue)=>previousValue+currentValue) 
+            
+            return sum;
+        
         }
 
         // Test cases
