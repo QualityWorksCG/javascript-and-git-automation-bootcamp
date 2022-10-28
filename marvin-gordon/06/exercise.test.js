@@ -11,7 +11,7 @@ describe('06', () => {
                 // and print "Maths paper marked"
                 return new Promise(function(resolve, reject){
                     setTimeout(() => resolve("Maths paper marked"), 2000)
-                });
+                }).then((result)=>console.log(result));
             }
         },
         {
@@ -22,7 +22,7 @@ describe('06', () => {
                 // and print "Geology paper marked"
                 return new Promise(function(resolve, reject){
                     setTimeout(() => resolve("Geology paper marked"), 2000)
-                });
+                }).then((result)=>console.log(result));
             }
         },
         {
@@ -33,7 +33,7 @@ describe('06', () => {
                 // and print "Social Studies paper marked"
                 return new Promise(function(resolve, reject){
                     setTimeout(() => resolve("Social Studies paper marked"), 2000)
-                });
+                }).then((result)=>console.log(result));
             }
         },
     ]
@@ -44,19 +44,17 @@ describe('06', () => {
         // Your code here
         listOfPapers.forEach((paper) => {
             if(paper.wasSubmitted){
-                paper.markPaper().then((result)=>console.log(result));
+                paper.markPaper();
             }
         });
         setTimeout(function(){
 
-
-
-        expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");
-        expect(spyOnLog).toHaveBeenCalledWith("Geology paper marked");
-        expect(spyOnLog).not.toHaveBeenCalledWith("Social Studies paper marked");
-        expect(listOfPapers[0].markPaper()).toBeInstanceOf(Promise);
-        expect(listOfPapers[1].markPaper()).toBeInstanceOf(Promise);
-        expect(listOfPapers[2].markPaper()).toBeInstanceOf(Promise);
+            expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");
+            expect(spyOnLog).toHaveBeenCalledWith("Geology paper marked");
+            expect(spyOnLog).not.toHaveBeenCalledWith("Social Studies paper marked");
+            expect(listOfPapers[0].markPaper()).toBeInstanceOf(Promise);
+            expect(listOfPapers[1].markPaper()).toBeInstanceOf(Promise);
+            expect(listOfPapers[2].markPaper()).toBeInstanceOf(Promise);
         }, 2200);
     });
 });
