@@ -13,7 +13,6 @@ describe('02', () => {
                 return false;
             }
 
-
             letters = str.slice(-3)
 
             return letters + str + letters;
