@@ -77,14 +77,14 @@ describe('08', () => {
         expect(car.color).toBe('red');
         expect(car.whatIsMyName()).toBe('I am a sedan');
 
-        // expect(truck.wheels).toBe(6);
-        // expect(truck.bodyType).toBe('pickup');
-        // expect(truck.color).toBe('blue');
-        // expect(truck.whatIsMyName()).toBe('I am a pickup');
+        expect(truck.wheels).toBe(6);
+        expect(truck.bodyType).toBe('pickup');
+        expect(truck.color).toBe('blue');
+        expect(truck.whatIsMyName()).toBe('I am a pickup');
 
-        // expect(motorcycle.wheels).toBe(2);
-        // expect(motorcycle.bodyType).toBe('motorcycle');
-        // expect(motorcycle.color).toBe('green');
-        // expect(motorcycle.whatIsMyName()).toBe('I am a motorcycle');
+        expect(motorcycle.wheels).toBe(2);
+        expect(motorcycle.bodyType).toBe('motorcycle');
+        expect(motorcycle.color).toBe('green');
+        expect(motorcycle.whatIsMyName()).toBe('I am a motorcycle');
     });
 });

@@ -6,25 +6,49 @@ describe('06', () => {
         {
             subject: "Maths",
             wasSubmitted: true,
-            markPaper: () => {
+            markPaper: async () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Maths paper marked"
+                const promise = new Promise ((resolve,reject) => {
+                    setTimeout( () => {
+                        resolve ("Maths paper marked")
+                    }, 2000)
+                })
+
+                const value = await promise;
+                console.log(value);
             }
         },
         {
             subject: "Geology",
             wasSubmitted: true,
-            markPaper: () => {
+            markPaper: async () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Geology paper marked"
+                const promise = new Promise ((resolve,reject) => {
+                    setTimeout( () => {
+                        resolve ("Geology paper marked")
+                    }, 2000)
+                })
+
+                const value = await promise;
+                console.log(value);
             }
         },
         {
             subject: "Social Studies",
             wasSubmitted: false,
-            markPaper: () => {
+            markPaper: async () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Social Studies paper marked"
+                const promise = new Promise ((resolve,reject) => {
+                    setTimeout( () => {
+                        resolve ("Social Studies paper marked")
+                    }, 2000)
+                })
+
+                const value = await promise;
+                console.log(value);
             }
         },
     ]
@@ -33,6 +57,14 @@ describe('06', () => {
         const spyOnLog = vi.spyOn(console, 'log');
 
         // Your code here
+
+            const promiseList = listOfPapers.map(async (element) => {
+                if (element.wasSubmitted === true){
+                    return element.markPaper();
+                }
+            })
+
+            await Promise.all(promiseList)
 
 
         expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");
