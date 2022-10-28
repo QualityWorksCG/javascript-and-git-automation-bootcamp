@@ -17,6 +17,93 @@ describe('08', () => {
     test('Create a Vehicle class, and create different type of vehicles that extends', () => {
         // Your code here
 
+        //---------------BASE CLASS----------------
+        class Vehicle{
+            _wheels = 0;
+            _bodyType = "";
+
+            set wheels(value){
+                this._wheels = value;
+            }
+
+            set bodyType(value){
+                this._bodyType = value;
+            }
+
+            get wheels(){
+                return this._wheels;
+            }
+
+            get bodyType(){
+                return this._bodyType;
+            }
+
+            constructor(wheels, bodyType){
+                this._wheels = wheels;
+                this._bodyType = bodyType;
+            }
+        }
+
+        //---------------CHILDREN-------------------
+        class Car extends Vehicle{
+            _color = "";
+            set color(value){
+                this._color = value;
+            }
+
+            get color(){
+                return this._color;
+            }
+
+            constructor(color, wheels, bodyType){
+                super(wheels, bodyType);
+                this._color = color;
+            }
+
+            whatIsMyName(){
+                return `I am a ${this.bodyType}`;
+            }
+        }
+
+        class Truck extends Vehicle{
+            _color = "";
+            set color(value){
+                this._color = value;
+            }
+
+            get color(){
+                return this._color;
+            }
+
+            constructor(color, wheels, bodyType){
+                super(wheels, bodyType);
+                this._color = color;
+            }
+
+            whatIsMyName(){
+                return `I am a ${this.bodyType}`;
+            }
+        }
+
+        class Motorcycle extends Vehicle{
+            _color = "";
+            set color(value){
+                this._color = value;
+            }
+
+            get color(){
+                return this._color;
+            }
+
+            constructor(color, wheels, bodyType){
+                super(wheels, bodyType);
+                this._color = color;
+            }
+
+            whatIsMyName(){
+                return `I am a ${this.bodyType}`;
+            }
+        }
 
         // Expected outcome for the child classes
         const car = new Car('red', 4, 'sedan');

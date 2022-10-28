@@ -11,6 +11,7 @@ describe('07', () => {
          */
         const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+        //for each call
         array.forEach((num)=>console.log(`The current element is ${num}`));
 
         // Test cases

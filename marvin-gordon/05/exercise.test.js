@@ -4,6 +4,7 @@ describe('05', () => {
 
         const sum = (arrayToSum) => {
 
+            // reduce method to iterate over array 
             let sum = arrayToSum.reduce((previousValue, currentValue)=>previousValue+currentValue) 
             
             return sum;
