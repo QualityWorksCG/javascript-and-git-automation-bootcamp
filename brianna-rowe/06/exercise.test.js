@@ -9,16 +9,15 @@ describe('06', () => {
             markPaper: () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Maths paper marked"
-                return new Promise(function(resolve, reject) {
+                return new Promise(resolve => {
                   setTimeout(() => resolve("Maths paper marked"), 2000);
                 });
 
-            // return new Promise(() => {
-            //     setTimeout(() => {
-            //       console.log("Maths paper marked");
-            //     }, 2000);
-            //   });
+                // const marked = Promise(resolve => {
+                //   setTimeout(() => resolve("Maths paper marked"), 2000);
+                // });
 
+                // marked.then((value) => { console.log(value) })
             }
         },
         {
@@ -51,10 +50,7 @@ describe('06', () => {
         // Your code here
         for (const paper in listOfPapers) {
             if(paper.wasSubmitted == true){
-               paper.markPaper.then(
-                    result => console.log(result),
-                    error => console.log(error)
-                ) 
+               paper.markPaper()
             } 
         }
 

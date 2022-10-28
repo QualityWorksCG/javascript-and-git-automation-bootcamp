@@ -7,7 +7,7 @@ describe('Exercise 01', () => {
         function multipleOf5Or9(positiveNumber) {
             // Your code here
             if(positiveNumber % 5 == 0 || positiveNumber % 9 == 0) return true
-
+                
             return false
         }
 
