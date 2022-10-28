@@ -2,9 +2,27 @@ describe('05', () => {
     it('Take an array of any length and add all elements to return a sum', () => {
 
 
-        const sum = (array) => {
-            // Your code here
+        // const sum = (array) => {
 
+        //     let total = 0;
+
+        //     for (let i = 0; i < array.length; i++) {
+
+        //         total += array[i];
+        //     }
+
+        //     return total;
+        // }    
+
+        const sum = (array) => {
+
+            const total = array.reduce((sumKeeper, value) => {
+
+                return sumKeeper + value;
+
+            }, 0);
+
+            return total;
         }
 
         // Test cases
