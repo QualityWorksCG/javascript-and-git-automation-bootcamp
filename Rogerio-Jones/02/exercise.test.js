@@ -15,7 +15,6 @@ describe('02', () => {
                 let end = ar.slice(-3) 
                 ar = ar.concat(end)
                 ar = end.concat(ar)
-                
                 ar = ar.join('')
                 return ar
             }
