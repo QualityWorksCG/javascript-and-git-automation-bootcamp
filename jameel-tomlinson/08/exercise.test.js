@@ -15,7 +15,38 @@ describe('08', () => {
      */
 
     test('Create a Vehicle class, and create different type of vehicles that extends', () => {
-        // Your code here
+        class Vehicle {
+            constructor(wheels, bodyType) {
+                this.wheels = wheels;
+                this.bodyType = bodyType;
+            }
+
+            whatIsMyName(){
+                return `I am a ${this.bodyType}`;
+            }
+        }
+
+        class Car extends Vehicle {
+            constructor(color, wheels, bodyType){
+                super(wheels, bodyType)
+                this.color = color;
+            }
+
+        }
+
+        class Truck extends Vehicle {
+            constructor(color, wheels, bodyType){
+                super(wheels, bodyType)
+                this.color = color;
+            }
+        }
+
+        class Motorcycle extends Vehicle {
+            constructor(color, wheels, bodyType){
+                super(wheels, bodyType)
+                this.color = color;
+            }
+        }
 
 
         // Expected outcome for the child classes
