@@ -6,6 +6,15 @@ describe('Exercise 01', () => {
 
         function multipleOf5Or9(positiveNumber) {
             // Your code here
+            const x = positiveNumber/5
+            const y = positiveNumber/9
+            if (Number.isInteger(x) ){
+                return true;
+            } else if (Number.isInteger(y)){
+                return true;
+            } else {
+                return false;
+            }
 
         }
 

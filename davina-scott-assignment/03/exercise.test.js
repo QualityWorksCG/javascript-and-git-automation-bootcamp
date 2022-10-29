@@ -3,6 +3,19 @@ describe('03', () => {
 
         function isSix(x, y) {
             // Your code here
+            const sum = x + y
+            const xDifference = x - y
+            const yDifference = y - x
+
+            if ((x == 6) || (y == 6)){
+                return true;
+            } else if ((xDifference == 6) || (yDifference == 6)){
+                return true;
+            } else if (sum == 6){
+                return true;
+            } else {
+                return false;
+            }
 
         }
 

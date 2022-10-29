@@ -8,6 +8,14 @@ describe('02', () => {
 
         function lastThree(str) {
             // Your code here
+            if (str.length >= 3){
+                const lastThreeChar = str.slice(-3)
+                const newString = lastThreeChar + str + lastThreeChar
+                return newString
+
+            } else {
+                return false;
+            }
 
         }
 
