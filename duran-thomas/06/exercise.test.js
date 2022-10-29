@@ -50,19 +50,10 @@ describe('06', () => {
     it('Check if a paper was submitted, and if yes, wait for it to be marked', async () => {
         const spyOnLog = vi.spyOn(console, 'log');
         
-        if(listOfPapers[0].wasSubmitted){
-            const value = await listOfPapers[0].markPaper()
-            console.log(value)
-        }
-        if(listOfPapers[1].wasSubmitted){
-            const value = await listOfPapers[1].markPaper()
-            console.log(value)
-        }
-        if(listOfPapers[2].wasSubmitted){
-            const value = await listOfPapers[2].markPaper()
-            console.log(value)
-        }else{
-            null
+        for(let marked of listOfPapers){
+            if(marked.wasSubmitted){
+                console.log(await marked.markPaper())
+            }
         }
 
         expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");
