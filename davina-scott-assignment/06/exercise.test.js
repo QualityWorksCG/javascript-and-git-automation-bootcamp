@@ -9,6 +9,14 @@ describe('06', () => {
             markPaper: () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Maths paper marked"
+                    return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve('Maths paper marked');
+                        reject('Paper was not marked');
+                    }, 2000);
+                    // return myPromise
+                });
+                
             }
         },
         {
@@ -17,6 +25,14 @@ describe('06', () => {
             markPaper: () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Geology paper marked"
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve('Geology paper marked');
+                        reject('Paper was not marked');
+                    }, 2000);
+                });
+                // return myPromise
+
             }
         },
         {
@@ -25,6 +41,14 @@ describe('06', () => {
             markPaper: () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Social Studies paper marked"
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve('Social Studies paper marked');
+                        reject('Paper was not marked');
+                    }, 2000);
+                    
+                });
+                // return myPromise
             }
         },
     ]
@@ -33,6 +57,17 @@ describe('06', () => {
         const spyOnLog = vi.spyOn(console, 'log');
 
         // Your code here
+        listOfPapers.forEach(element => {
+            const arrayResult = element.markPaper()
+            console.log(arrayResult)
+            if (element.wasSubmitted = true){
+                arrayResult.then((value) => {
+                    console.log(value);
+                }).catch((error) => {
+                        expect(error).toBe('Promise rejected');
+                })
+            }
+        });
 
 
         expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");
