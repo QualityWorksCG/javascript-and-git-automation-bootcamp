@@ -8,13 +8,14 @@ describe('Exercise 02', () => {
 
         function lastThree(str) {
             if (str.length>=3) {
-                str_len = 3;
-
-                back = str.substring(str.length-3);
+                
+                const back = str.slice(-3);
                 return back + str + back
             }
-                else 
-                return false;
+                else {
+                    return false;
+                 }
+                
 
         }
         console.log(lastThree('hello'));

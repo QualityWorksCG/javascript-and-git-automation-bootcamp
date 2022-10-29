@@ -53,7 +53,7 @@ describe('Exercise 06', () => {
         })
        }
 
-       Try {
+       try {
             const value = await paperSubmitted()
             console.log(value)
         } catch (error) {

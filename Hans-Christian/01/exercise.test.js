@@ -5,25 +5,20 @@ describe('Exercise 01', () => {
          */
 
         function multipleOf5Or9(positiveNumber) {
-            if (positiveNumber % 5 == 0 || positiveNumber % 9 == 0)
-            {
+            const remainder5 = positiveNumber % 5;
+            const remainder9 = positiveNumber % 9;
+            if (remainder5 == 0) {
                 return true;
-            }
-            else {
-                return false;
-            }
+                }
+                else if (remainder9 == 0) {
+                    return true
+                }
+                else {
+                    return false
+                }
+
         }
-    
-        else {
-                return false;
-            }
-    }
-            console.log(positiveNumber(10));
-            console.log(positiveNumber(20));
-            console.log(positiveNumber(21));
-            console.log(positiveNumber(36));
-            console.log(positiveNumber(22));
-            console.log(positiveNumber(23));
+
         // Test cases
         expect(multipleOf5Or9(10)).toBe(true);
         expect(multipleOf5Or9(20)).toBe(true);
