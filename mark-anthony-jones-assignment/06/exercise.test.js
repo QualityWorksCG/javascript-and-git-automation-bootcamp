@@ -13,8 +13,6 @@ describe('06', () => {
                 setTimeout(()=>{
                     resolve('Maths paper marked');
                 }, 2000)
-                }).then(()=>{
-                    console.log("Maths paper marked")
                 })
             }
         },
@@ -28,8 +26,6 @@ describe('06', () => {
                     setTimeout(()=>{
                         resolve('Geology paper marked');
                     }, 2000)
-                    }).then(()=>{
-                        console.log("Geology paper marked")
                     })
             }
         },
@@ -43,8 +39,6 @@ describe('06', () => {
                     setTimeout(()=>{
                         resolve('Social Studies paper marked');
                     }, 2000)
-                    }).then(()=>{
-                        console.log("Social Studies paper marked")
                     })
                 
             }
@@ -55,6 +49,11 @@ describe('06', () => {
         const spyOnLog = vi.spyOn(console, 'log');
 
         // Your code here
+        for await(const paper of listOfPapers){
+            if(paper.wasSubmitted === true){
+                return paper.markPaper()
+            }
+        }
 
 
         expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");
