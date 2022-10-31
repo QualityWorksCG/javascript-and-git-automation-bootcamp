@@ -11,15 +11,16 @@ describe('06', () => {
                 // and print "Maths paper marked"
                 return new Promise((resolve, reject) => {
 
-                    setTimeout(() => resolve("Math paper marked"), 2000);
+                    setTimeout(() => resolve("Maths paper marked"), 2000);
 
-                }).then(
+                });
+                // .then(
 
-                    function(result){
+                //     function(result){
 
-                        console.log(result);
-                    }
-                );
+                //         console.log(result);
+                //     }
+                // );
             }
         },
         {
@@ -32,13 +33,14 @@ describe('06', () => {
 
                     setTimeout(() => resolve("Geology paper marked"), 2000);
 
-                }).then(
+                });
+                // .then(
 
-                    function(result){
+                //     function(result){
 
-                        console.log(result);
-                    }
-                );
+                //         console.log(result);
+                //     }
+                // );
             }
         },
         {
@@ -51,13 +53,14 @@ describe('06', () => {
 
                     setTimeout(() => resolve("Social Studies paper marked"), 2000);
 
-                }).then(
+                });
+                // .then(
 
-                    function(result){
+                //     function(result){
 
-                        console.log(result);
-                    }
-                );
+                //         console.log(result);
+                //     }
+                // );
             }
         },
     ]
@@ -65,24 +68,26 @@ describe('06', () => {
     it('Check if a paper was submitted, and if yes, wait for it to be marked', async () => {
         const spyOnLog = vi.spyOn(console, 'log');
 
-        for(let paper of listOfPapers){
+        for (let paper of listOfPapers) {
 
-            if(paper.wasSubmitted){
+            if (paper.wasSubmitted) {
 
-                paper.markPaper();
+                let result = await paper.markPaper();
+
+                console.log(result);
             }
         }
 
-        setTimeout(() => {
-            
-            expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");
-            expect(spyOnLog).toHaveBeenCalledWith("Geology paper marked");
-            expect(spyOnLog).not.toHaveBeenCalledWith("Social Studies paper marked");
-            expect(listOfPapers[0].markPaper()).toBeInstanceOf(Promise);
-            expect(listOfPapers[1].markPaper()).toBeInstanceOf(Promise);
-            expect(listOfPapers[2].markPaper()).toBeInstanceOf(Promise);
+        //setTimeout(() => {
 
-        }, 2050); //given more time to ensure it doesn't run before the code it's waiting on
+        expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");
+        expect(spyOnLog).toHaveBeenCalledWith("Geology paper marked");
+        expect(spyOnLog).not.toHaveBeenCalledWith("Social Studies paper marked");
+        expect(listOfPapers[0].markPaper()).toBeInstanceOf(Promise);
+        expect(listOfPapers[1].markPaper()).toBeInstanceOf(Promise);
+        expect(listOfPapers[2].markPaper()).toBeInstanceOf(Promise);
+
+        //}, 2050); //given more time to ensure it doesn't run before the code it's waiting on
 
     });
 });
