@@ -22,6 +22,10 @@ describe('08', () => {
                 this.wheels = wheels;
                 this.bodyType = bodyType;
             }
+
+            whatIsMyName() {
+                return "I am a " + this.bodyType;
+            }
         }
 
         class Car extends Vehicle {
@@ -29,11 +33,7 @@ describe('08', () => {
             constructor(color, wheels, bodyType) {
                 super(wheels, bodyType);
                 this.color = color;
-            }
-
-            whatIsMyName() {
-                return "I am a " + this.bodyType;
-            }
+            }          
         }
 
         class Truck extends Vehicle {
@@ -41,11 +41,7 @@ describe('08', () => {
             constructor(color, wheels, bodyType) {
                 super(wheels, bodyType);
                 this.color = color;
-            }
-
-            whatIsMyName() {
-                return "I am a " + this.bodyType;
-            }
+            }           
         }
 
         class Motorcycle extends Vehicle {
@@ -54,12 +50,7 @@ describe('08', () => {
                 super(wheels, bodyType);
                 this.color = color;
             }
-
-            whatIsMyName() {
-                return "I am a " + this.bodyType;
-            }
         }
-
 
 
         // Expected outcome for the child classes

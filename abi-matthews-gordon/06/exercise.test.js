@@ -7,7 +7,6 @@ describe('06', () => {
             subject: "Maths",
             wasSubmitted: true,
             markPaper: () => {
-
                 // add a promise here that resolves after 2 seconds
                 // and print "Maths paper marked"
                 return new Promise((resolve, reject) => {
