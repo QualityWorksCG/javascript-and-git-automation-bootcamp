@@ -7,24 +7,34 @@ describe('06', () => {
             subject: "Maths",
             wasSubmitted: true,
             markPaper: () => {
-                // add a promise here that resolves after 2 seconds
-                // and print "Maths paper marked"
+                const promise =  new Promise ((resolve, reject) =>{
+                    setTimeout(() => {
+                        resolve("Math paper marked")
+                      }, 2000);
+                })
             }
         },
         {
             subject: "Geology",
             wasSubmitted: true,
             markPaper: () => {
-                // add a promise here that resolves after 2 seconds
-                // and print "Geology paper marked"
+                const promise =  new Promise ((resolve, reject) =>{
+                    setTimeout(() => {
+                        resolve("Geology paper marked")
+                      }, 2000);
+                })
             }
         },
+
         {
             subject: "Social Studies",
             wasSubmitted: false,
             markPaper: () => {
-                // add a promise here that resolves after 2 seconds
-                // and print "Social Studies paper marked"
+                const promise =  new Promise ((resolve, reject) =>{
+                    setTimeout(() => {
+                        resolve("SOcial Studies paper marked")
+                      }, 2000);
+                })
             }
         },
     ]
@@ -33,7 +43,11 @@ describe('06', () => {
         const spyOnLog = vi.spyOn(console, 'log');
 
         // Your code here
-
+        for await (const paper of listOfPapers){
+            if (paper.wasSubmitted === true){
+             return paper.markPaper()
+            }
+        }
 
         expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");
         expect(spyOnLog).toHaveBeenCalledWith("Geology paper marked");

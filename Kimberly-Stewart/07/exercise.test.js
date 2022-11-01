@@ -10,8 +10,7 @@ describe('07', () => {
          * Example: `The current element is ....`
          */
         const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-        // Your code here
+        array.forEach((num) => console.log(`The current element is ${num}`));        // Your code here
 
         // Test cases
         expect(spyOnLog).toHaveBeenCalledWith('The current element is 1');
