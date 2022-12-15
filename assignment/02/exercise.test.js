@@ -8,7 +8,10 @@ describe('02', () => {
 
         function lastThree(str) {
             // Your code here
+            if (str.length < 3) return false;
 
+            let lastThree = str.slice(str.length - 3)
+            return lastThree + str + lastThree;
         }
 
         // Test cases
