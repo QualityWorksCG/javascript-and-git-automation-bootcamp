@@ -9,6 +9,11 @@ describe('06', () => {
             markPaper: () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Maths paper marked"
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve("Maths paper marked");
+                    }, 2000);
+                })
             }
         },
         {
@@ -17,6 +22,11 @@ describe('06', () => {
             markPaper: () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Geology paper marked"
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve("Geology paper marked");
+                    }, 2000);
+                })
             }
         },
         {
@@ -25,6 +35,11 @@ describe('06', () => {
             markPaper: () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Social Studies paper marked"
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve("Social Studies paper marked");
+                    }, 2000)
+                })
             }
         },
     ]
@@ -32,7 +47,19 @@ describe('06', () => {
     it('Check if a paper was submitted, and if yes, wait for it to be marked', async () => {
         const spyOnLog = vi.spyOn(console, 'log');
 
-        // Your code here
+        // Loop through the list of papers and mark them
+        // if they were submitted
+        // Use await to wait for the promise to resolve
+        // and then print the result
+
+
+        for (let paper of listOfPapers) {
+            if (paper.wasSubmitted) {
+                await paper.markPaper().then((result) => {
+                    console.log(result);
+                })
+            }
+        }
 
 
         expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");

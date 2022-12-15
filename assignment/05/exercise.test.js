@@ -3,8 +3,17 @@ describe('05', () => {
 
 
         const sum = (array) => {
-            // Your code here
+            // You could also use reduce() method to solve this problem, 
+            // but that was not covered in the course.
+            // Example: array.reduce((a, b) => a + b, 0);
 
+            let sum = 0;
+
+            for (let i = 0; i < array.length; i++) {
+                sum += array[i];
+            }
+
+            return sum;
         }
 
         // Test cases

@@ -11,7 +11,9 @@ describe('07', () => {
          */
         const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-        // Your code here
+        array.forEach((element) => {
+            console.log(`The current element is ${element}`);
+        });
 
         // Test cases
         expect(spyOnLog).toHaveBeenCalledWith('The current element is 1');
