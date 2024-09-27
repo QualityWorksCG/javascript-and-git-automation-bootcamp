@@ -1,0 +1,16 @@
+{
+  "name": "javascript-and-git-workbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "exercise": "node ../setup/scripts.js"
+  },
+  "author": "Dimitri Harding",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "vitest": "^0.24.3"
+  }
+}
